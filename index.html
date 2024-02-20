@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Mom!</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="border"></div>
+        <h1 class="heading">Happy Birthday, Mom!</h1>
+        <p class="message">Dear Mom,</p>
+        <p class="message">On this special day, I just want to take a moment to express my deepest gratitude and love for you. You are not only my mother but also my greatest source of strength and inspiration.</p>
+        <p class="message">Thank you for your unconditional love, your endless support, and your comforting presence. You mean the world to me, and I am so grateful to have you in my life.</p>
+        <p class="message">Wishing you a birthday filled with joy, laughter, and all the happiness in the world. You deserve nothing but the best today and always.</p>
+        <p class="signature">Happy Birthday, Mom! Love you forever and always.</p>
+        <div class="border"></div>
+        
+        <button id="changeColorBtn">Change Message Color</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    document.querySelector("#changeColorBtn").addEventListener("click", function() {
+        const message = document.querySelectorAll(".message");
+        message.forEach(function(item) {
+            item.style.color = getRandomColor();
+        });
+    });
+});
+
+function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+    </script>
+</body>
+</html>
